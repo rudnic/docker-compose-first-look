@@ -1,0 +1,36 @@
+services:
+  app1:
+    image: "node:18"
+    working_dir: /home/rudnic/hspu/it-5-6/docker-lab/compose-lab
+    volumes:
+      - .:/home/rudnic/hspu/it-5-6/docker-lab/compose-lab
+    environment:
+      - NODE_ENV=production
+      - PORT=1234
+    ports:
+      - 1234:1234
+    command: "node ."
+
+  app2:
+    image: "node:18"
+    working_dir: /home/rudnic/hspu/it-5-6/docker-lab/compose-lab
+    volumes:
+      - .:/home/rudnic/hspu/it-5-6/docker-lab/compose-lab
+    environment:
+      - NODE_ENV=production
+      - PORT=5432
+    ports:
+      - 5432:5432
+    command: "node ."
+
+  app3:
+    image: "node:18"
+    working_dir: /home/rudnic/hspu/it-5-6/docker-lab/compose-lab
+    volumes:
+      - .:/home/rudnic/hspu/it-5-6/docker-lab/compose-lab
+    environment:
+      - NODE_ENV=production
+      - PORT=7654
+    ports:
+      - 7654:7654
+    command: "node ."
